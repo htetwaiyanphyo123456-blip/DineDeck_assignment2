@@ -1,0 +1,226 @@
+/* General resets and base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Container and layout */
+header, footer {
+  background-color: #222;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.logo-container {
+  margin: 10px 0;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+}
+
+.nav-list li {
+  margin: 0 10px;
+}
+
+.nav-list li a {
+  display: block;
+  color: #ddd;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active {
+  background-color: #f99400;
+  color: #fff;
+  border-radius: 4px;
+}
+
+main {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
+/* Intro section on homepage */
+.intro h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  margin-bottom: 15px;
+}
+
+.banner-image {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+/* Restaurant list */
+.restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 20px;
+}
+
+.restaurant {
+  background: #fff;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.restaurant img {
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.restaurant h2 {
+  margin-top: 0;
+  color: #f99400;
+}
+
+.restaurant ul {
+  padding-left: 20px;
+}
+
+.restaurant p {
+  margin: 8px 0;
+}
+
+/* Forms */
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form input[type="date"],
+form input[type="time"],
+form input[type="number"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+form legend {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+form fieldset label {
+  font-weight: normal;
+  margin-right: 15px;
+}
+
+form button {
+  background-color: #f99400;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #d67a00;
+}
+
+/* Recommendation result */
+.recommendation-result ul {
+  list-style: disc inside;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.recommendation-result li {
+  margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 1023px) and (min-width: 768px) {
+  main {
+    max-width: 720px;
+  }
+  .nav-list {
+    flex-wrap: wrap;
+  }
+  .restaurant-list {
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-list {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-list li {
+    margin: 5px 0;
+  }
+  main {
+    margin: 10px;
+  }
+  .restaurant-list {
+    grid-template-columns: 1fr;
+  }
+}

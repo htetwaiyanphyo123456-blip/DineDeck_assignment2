@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DineDeck - Reservation</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="recommend.html">Recommendations</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="reservation.html" class="active">Reservation</a></li>
+            </ul>
+        </nav>
+        <div class="logo-container">
+            <img src="images/DineDeck_Logo.png" alt="DineDeck Logo" class="logo" />
+        </div>
+    </header>
+
+    <main>
+        <section class="reservation-form-section">
+            <h1>Make a Reservation</h1>
+            <form id="reservationForm" method="POST" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required />
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="\d{10,}" required />
+
+                <label for="restaurant">Select Restaurant:</label>
+                <select id="restaurant" name="restaurant" required>
+                    <option value="">--Select--</option>
+                    <option>La Bella Pasta</option>
+                    <option>Curry House Delight</option>
+                    <option>Green Leaf Vegan</option>
+                    <option>The Luxe Table</option>
+                    <option>Family Feast</option>
+                    <option>Spice & Harmony</option>
+                    <option>DineDeck App Lounge</option>
+                    <option>Kebab Corner</option>
+                </select>
+
+                <label for="reservationDate">Reservation Date:</label>
+                <input type="date" id="reservationDate" name="reservationDate" required />
+
+                <label for="reservationTime">Reservation Time:</label>
+                <input type="time" id="reservationTime" name="reservationTime" required />
+
+                <label for="numPeople">Number of People:</label>
+                <input type="number" id="numPeople" name="numPeople" min="1" required />
+
+                <label for="specialRequests">Special Requests (optional):</label>
+                <textarea id="specialRequests" name="specialRequests" rows="3"></textarea>
+
+                <label for="depositAmount">Deposit Amount (RM):</label>
+                <input type="text" id="depositAmount" name="depositAmount" readonly />
+
+                <fieldset>
+                    <legend>Deposit Payment Method:</legend>
+                    <label><input type="radio" name="paymentMethod" value="Voucher" required /> Voucher</label>
+                    <label><input type="radio" name="paymentMethod" value="Online" /> Online Payment</label>
+                </fieldset>
+
+                <div id="voucherCodeBox" style="display:none;">
+                    <label for="voucherCode">Voucher Code (12 digits):</label>
+                    <input type="text" id="voucherCode" name="voucherCode" pattern="\d{12}" />
+                </div>
+
+                <div id="creditCardBox" style="display:none;">
+                    <label for="creditCardNumber">Credit Card Number:</label>
+                    <input type="text" id="creditCardNumber" name="creditCardNumber" />
+                    <small>Visa/Mastercard: 16 digits, Amex: 15 digits</small>
+                </div>
+
+                <label for="billingEmail">Billing Email Address:</label>
+                <input type="email" id="billingEmail" name="billingEmail" required />
+                <label><input type="checkbox" id="sameEmail" /> Same as email address</label>
+
+                <button type="submit">Submit Reservation</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 DineDeck. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DineDeck - Recommendations</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="recommend.html" class="active">Recommendations</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+            </ul>
+        </nav>
+        <div class="logo-container">
+            <img src="images/DineDeck_Logo.png" alt="DineDeck Logo" class="logo" />
+        </div>
+    </header>
+
+    <main>
+        <section class="recommendation-form">
+            <h1>Find Your Perfect Restaurant</h1>
+            <form id="recommendForm">
+                <label for="diet">Dietary Preference:</label>
+                <select id="diet" name="diet" required>
+                    <option value="">--Select--</option>
+                    <option value="None">None</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Halal">Halal</option>
+                </select>
+
+                <label for="budget">Budget Range:</label>
+                <select id="budget" name="budget" required>
+                    <option value="">--Select--</option>
+                    <option value="Low">RM15 - RM30</option>
+                    <option value="Medium">RM31 - RM60</option>
+                    <option value="High">RM61 and above</option>
+                </select>
+
+                <label for="purpose">Dining Purpose:</label>
+                <select id="purpose" name="purpose" required>
+                    <option value="">--Select--</option>
+                    <option value="Family">Family</option>
+                    <option value="Date">Date</option>
+                    <option value="Business">Business</option>
+                </select>
+
+                <button type="submit">Get Recommendation</button>
+            </form>
+
+            <section id="recommendationResult" class="recommendation-result" aria-live="polite"></section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 DineDeck. All rights reserved.</p>
+    </footer>
+</body>
+</html>
